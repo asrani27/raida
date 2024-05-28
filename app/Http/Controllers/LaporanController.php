@@ -41,93 +41,53 @@ class LaporanController extends Controller
         $bulan = $req->bulan;
         $tahun = $req->tahun;
 
+        if ($bulan == 1) {
+            $namabulan = 'Januari';
+        }
+        if ($bulan == 2) {
+            $namabulan = 'Februari';
+        }
+        if ($bulan == 3) {
+            $namabulan = 'Maret';
+        }
+        if ($bulan == 4) {
+            $bnamaulan = 'April';
+        }
+        if ($bulan == 5) {
+            $namabulan = 'Mei';
+        }
+        if ($bulan == 6) {
+            $namabulan = 'Juni';
+        }
+        if ($bulan == 7) {
+            $namabulan = 'Juli';
+        }
+        if ($bulan == 8) {
+            $namabulan = 'Agustus';
+        }
+        if ($bulan == 9) {
+            $namabulan = 'September';
+        }
+        if ($bulan == 10) {
+            $namabulan = 'Oktober';
+        }
+        if ($bulan == 11) {
+            $namabulan = 'November';
+        }
+        if ($bulan == 12) {
+            $namabulan = 'Desember';
+        }
 
         if ($req->jenis == '1') {
-            $data = Jadwal::whereMonth('created_at', $bulan)->whereYear('created_at', $tahun)->get()->map(function ($item) use ($bulan) {
-                if ($bulan == 1) {
-                    $item->bulan = 'Januari';
-                }
-                if ($bulan == 2) {
-                    $item->bulan = 'Februari';
-                }
-                if ($bulan == 3) {
-                    $item->bulan = 'Maret';
-                }
-                if ($bulan == 4) {
-                    $bitem->ulan = 'April';
-                }
-                if ($bulan == 5) {
-                    $item->bulan = 'Mei';
-                }
-                if ($bulan == 6) {
-                    $item->bulan = 'Juni';
-                }
-                if ($bulan == 7) {
-                    $item->bulan = 'Juli';
-                }
-                if ($bulan == 8) {
-                    $item->bulan = 'Agustus';
-                }
-                if ($bulan == 9) {
-                    $item->bulan = 'September';
-                }
-                if ($bulan == 10) {
-                    $item->bulan = 'Oktober';
-                }
-                if ($bulan == 11) {
-                    $item->bulan = 'November';
-                }
-                if ($bulan == 12) {
-                    $item->bulan = 'Desember';
-                }
-                return $item;
-            });
+            $data = Jadwal::whereMonth('created_at', $bulan)->whereYear('created_at', $tahun)->get();
 
-            return view('print.jadwal', compact('data'));
+            return view('print.jadwal', compact('data', 'namabulan'));
         }
         if ($req->jenis == '2') {
-            $data = Monitoring::whereMonth('created_at', $bulan)->whereYear('created_at', $tahun)->get()->map(function ($item) use ($bulan) {
-                if ($bulan == 1) {
-                    $item->bulan = 'Januari';
-                }
-                if ($bulan == 2) {
-                    $item->bulan = 'Februari';
-                }
-                if ($bulan == 3) {
-                    $item->bulan = 'Maret';
-                }
-                if ($bulan == 4) {
-                    $bitem->ulan = 'April';
-                }
-                if ($bulan == 5) {
-                    $item->bulan = 'Mei';
-                }
-                if ($bulan == 6) {
-                    $item->bulan = 'Juni';
-                }
-                if ($bulan == 7) {
-                    $item->bulan = 'Juli';
-                }
-                if ($bulan == 8) {
-                    $item->bulan = 'Agustus';
-                }
-                if ($bulan == 9) {
-                    $item->bulan = 'September';
-                }
-                if ($bulan == 10) {
-                    $item->bulan = 'Oktober';
-                }
-                if ($bulan == 11) {
-                    $item->bulan = 'November';
-                }
-                if ($bulan == 12) {
-                    $item->bulan = 'Desember';
-                }
-                return $item;
-            });
+            $data = Monitoring::whereMonth('created_at', $bulan)->whereYear('created_at', $tahun)->get();
 
 
-            return view('print.monitoring', compact('data'));
+            return view('print.monitoring', compact('data', 'namabulan'));
         }
     }
 }

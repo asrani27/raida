@@ -39,8 +39,7 @@
     <div class="row invoice-info">
       <div class="col-sm-12 invoice-col text-center">
             <h4><strong>LAPORAN MONITORING</strong></h4>
-            BULAN : {{$data->first()->bulan}}
-            
+            BULAN : {{$namabulan}}
         </address>
       </div>
       <!-- /.col -->
