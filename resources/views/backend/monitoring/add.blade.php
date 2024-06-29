@@ -56,7 +56,11 @@
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Keterangan</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="keterangan" required>
+                        <select name="keterangan" class="form-control" required>
+                          <option value="">-</option>
+                          <option value="AMAN TERKENDALI">AMAN TERKENDALI</option>
+                          <option value="SITUASI TIDAK AMAN">SITUASI TIDAK AMAN</option>
+                        </select>
                       </div>
                     </div>
                     

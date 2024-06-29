@@ -72,7 +72,11 @@
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">keterangan</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="keterangan" value="{{$data->keterangan}}">
+                        <select name="keterangan" class="form-control" required>
+                          <option value="">-</option>
+                          <option value="TELAH DILAKSANAKAN" {{$data->keterangan == "TELAH DILAKSANAKAN" ? 'selected':''}}>TELAH DILAKSANAKAN</option>
+                          <option value="BELUM DILAKSANAKAN"  {{$data->keterangan == "BELUM DILAKSANAKAN" ? 'selected':''}}>BELUM DILAKSANAKAN</option>
+                        </select>
                       </div>
                     </div>
                     

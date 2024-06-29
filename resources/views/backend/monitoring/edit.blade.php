@@ -56,7 +56,11 @@
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Keterangan</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="keterangan" value="{{$data->keterangan}}">
+                        <select name="keterangan" class="form-control" required>
+                          <option value="">-</option>
+                          <option value="AMAN TERKENDALI" {{$data->keterangan == "AMAN TERKENDALI" ? 'selected':''}}>AMAN TERKENDALI</option>
+                          <option value="SITUASI TIDAK AMAN"  {{$data->keterangan == "SITUASI TIDAK AMAN" ? 'selected':''}}>SITUASI TIDAK AMAN</option>
+                        </select>
                       </div>
                     </div>
                     

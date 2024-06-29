@@ -24,7 +24,6 @@ class LoginController extends Controller
 
     public function loginhome()
     {
-
         if (Auth::check()) {
             return redirect()->route('home');
         }
